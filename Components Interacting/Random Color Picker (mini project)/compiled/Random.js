@@ -5,6 +5,7 @@ class Random extends React.Component {
     this.state = {
       color: [0, 200, 200]
     };
+    this.handleClick = this.handleClick.bind(this);
   }
   componentDidMount() {
     this.applyColor();
@@ -23,6 +24,11 @@ class Random extends React.Component {
     const color = this.formatColor(this.state.color);
     document.body.style.background = color;
   }
+  handleClick() {
+    this.setState({
+      color: this.chooseColor()
+    });
+  }
   chooseColor() {
     const random = [];
     for (let i = 0; i < 3; i++) {
@@ -33,7 +39,10 @@ class Random extends React.Component {
   render() {
     return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", {
       className: this.isLight() ? "white" : "black"
-    }, "Your color is ", this.formatColor(this.state.color)));
+    }, "Your color is ", this.formatColor(this.state.color)), /*#__PURE__*/React.createElement(Button, {
+      light: this.isLight(),
+      onClick: this.handleClick
+    }));
   }
 }
 ReactDOM.render( /*#__PURE__*/React.createElement(Random, null), document.getElementById("app"));

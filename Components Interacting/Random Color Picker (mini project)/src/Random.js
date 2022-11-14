@@ -1,10 +1,10 @@
-
-import { Button } from "./Button.js"
+import { Button } from "./Button.js";
 
 class Random extends React.Component {
   constructor(props) {
     super(props);
     this.state = { color: [0, 200, 200] };
+    this.handleClick = this.handleClick.bind(this)
   }
   componentDidMount() {
     this.applyColor();
@@ -27,6 +27,9 @@ class Random extends React.Component {
     const color = this.formatColor(this.state.color);
     document.body.style.background = color;
   }
+  handleClick() {
+    this.setState({ color: this.chooseColor() });
+  }
 
   chooseColor() {
     const random = [];
@@ -42,6 +45,7 @@ class Random extends React.Component {
         <h1 className={this.isLight() ? "white" : "black"}>
           Your color is {this.formatColor(this.state.color)}
         </h1>
+        <Button light={this.isLight()} onClick={this.handleClick}/>
       </div>
     );
   }
