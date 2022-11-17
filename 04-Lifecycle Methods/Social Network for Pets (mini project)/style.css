@@ -1,101 +1,77 @@
-html, body {
-	margin: 0;
-	height: 100%;
-}
-
 body {
-	background-color: #ffffff;
-	font-family: Helvetica, Arial, sans-serif;
-  text-align: center;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#app {
-	position: relative;
-	height: 100%;
-	width: 100%;
-	padding-top: 10px;
-}
-
-#app div {
-	width: 100%;
-}
-
-#app div div {
-	height: 100%;
-}
-
-#app div div div {
-	position: relative;
-	height: auto;
-}
-
-h1, h2 {
-	margin-left: 5%;
-	margin-right: 5%;
-}
-
-ul {
-	list-style-type: none;
-	padding: 0;
-}
-
-label {
-	display: block;
-	margin: 20px;
-	font-size: 30px;
-	font-weight: bold;
-}
-
-nav a {
-	margin:12px;
-	text-transform: uppercase;
-	font-size: 10px;
+h2,
+h3 {
+  margin: 0;
 }
 
 button {
-	-webkit-transition-duration: 0.1s; /* Safari */
-	transition-duration: 0.1s;
-	background-color: #F4595B;
-	border-radius: 8px;
-  border: none;
-	border-bottom: 4px solid #C24648;
-	color: white;
-	padding: 15px 32px;
-  margin-bottom: 1em;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	font-family: 'Oxygen', sans-serif;
-	letter-spacing: 2px;
+  color: #009;
+  font: inherit;
+  border: 0;
+  background: transparent;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #FF7375;
-  border-radius: 8px;
-  border-bottom: 4px solid #C24648;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  font-family: 'Oxygen', sans-serif;
-  letter-spacing: 2px;
+.App {
+  width: 95%;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-button:active {
-  background-color: #C24648;
-  border: none;
-  border-radius: 8px;
-  border-bottom: 4px solid #C24648;
-  color: #CCC;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  font-family: 'Oxygen', sans-serif;
-  letter-spacing: 2px;
+.App header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.App h1:after {
+  content: '🐾';
+  margin-left: 0.5em;
+}
+
+.App nav button:before {
+  content: '⬅';
+  margin-right: 0.5em;
+}
+
+.App main {
+  display: flex;
+}
+
+.Profile {
+  display: flex;
+  flex-grow: 1;
+  width: 66%;
+}
+
+.Profile .profile-picture {
+  width: 100px;
+  height: 100px;
+  margin-right: 1rem;
+  display: flex;
+  background: #999;
+}
+
+.Profile .profile-picture img {
+  width: inherit;
+}
+
+.Profile.loading {
+  color: #999;
+}
+
+.Profile.loading p {
+  background: #999;
+}
+
+.Directory {
+  flex-grow: 1;
 }
