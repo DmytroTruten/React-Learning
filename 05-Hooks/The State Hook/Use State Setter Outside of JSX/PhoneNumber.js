@@ -4,14 +4,13 @@ import React, {useState} from 'react';
 const validPhoneNumber = /^\d{1,10}$/;
 
 export default function PhoneNumber() {
-  // declare current state and state sette
-  const [phone, setPhone] = useState(""); 
-
+  // declare current state and state setter 
+  const [phone, setPhone] = useState("");
   const handleChange = ({ target })=> {
     const newPhone = target.value;
     const isValid = validPhoneNumber.test(newPhone);
     if (isValid) {
-        // update state 
+      setPhone(newPhone)
     }
     // just ignore the event, when new value is invalid
   };
@@ -19,7 +18,7 @@ export default function PhoneNumber() {
   return (
     <div className='phone'>
       <label for='phone-input'>Phone: </label>
-      <input id='phone-input' />
+      <input  value={phone} onChange={handleChange} id='phone-input' />
     </div>
   );
 }
