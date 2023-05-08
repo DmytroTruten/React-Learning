@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import './styles.css';
+import "./styles.css";
 
 export const GraphPoint = React.memo((props) => {
   const { setGraphPointOn } = props;
@@ -13,5 +13,5 @@ export const GraphPoint = React.memo((props) => {
     [setGraphPointOn]
   );
 
-  return <div className={`e3-graph-point ${on ? 'e3-graph-point-on' : ''}`} />;
+  return <div className={`e3-graph-point ${on ? "e3-graph-point-on" : ""}`} />;
 });
