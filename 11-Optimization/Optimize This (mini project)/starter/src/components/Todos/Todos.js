@@ -28,7 +28,6 @@ const Todos = () => {
     e.preventDefault();
     dispatch({
       type: "add",
-      // For this demo, we'll use the current timestamp as the id. In a production application, you would use a ID generator to ensure uniqueness.
       id: Date.now().toString(),
       text: newTodoText,
       user: currentUser,
