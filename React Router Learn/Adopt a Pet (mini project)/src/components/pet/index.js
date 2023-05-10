@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Pet = ({ animal }) => {
   return (
-    <a
+    <Link
       key={animal.id}
-      href={`/${animal.type.toLowerCase()}/${animal.id}`}
+      to={`/${animal.type.toLowerCase()}/${animal.id}`}
       className="pet"
     >
       <article>
@@ -13,7 +14,7 @@ const Pet = ({ animal }) => {
             <img
               className="pet-image"
               src={
-                animal.photos[0]?.medium || 'https://i.imgur.com/aEcJUFK.png'
+                animal.photos[0]?.medium || "https://i.imgur.com/aEcJUFK.png"
               }
               alt=""
             />
@@ -24,7 +25,7 @@ const Pet = ({ animal }) => {
         <p>Color: {animal.colors.primary}</p>
         <p>Gender: {animal.gender}</p>
       </article>
-    </a>
+    </Link>
   );
 };
 
